@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #535252;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #b46a6a;
+            padding: 10px 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        #navbar {
+            display: flex;
+            justify-content: center;
+        }
+
+        #navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        #navbar ul li {
+            margin: 0 15px;
+        }
+
+        #navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        #navbar ul li a:hover {
+            background-color: #555;
+        }
+
+        #content {
+            padding-top: auto;
+        }
+
+        section {
+            padding: 50px 0;
+            text-align: center;
+        }
+        .searchbar{
+            padding: 40px;
+            text-align: center;
+        }
+        .box{
+            border-color: rgb(73, 70, 70);
+            border-width: 1px;
+            border-style: solid;
+            display: inline-block;
+            width: 220px;
+            background-color: rgb(219, 191, 186);
+        }
+        .box:hover{
+            background-color: rgb(133, 112, 109);
+            color: white;
+        }
+        .products{
+            text-align: center;
+        }
+        input{
+            width: 60%;
+            padding: 20px;
+        }
+        .contact{
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 45px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header id="navbar">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <!--<li><a href="#services">Services</a></li>-->
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="content">
+        <section id="home">
+            <h2>Home</h2>
+            <p>Welcome to our website!</p>
+            <div class="searchbar">
+                <input placeholder="Search">
+            </div>
+            <div class="products">
+                <div class="box">
+                    <img src="type_a.jpg" width="220px" height="300px">
+                    <p>USB Type-A is the most common USB connector. It features a rectangular shape with four pins inside.</p>
+                </div>
+                <div class="box">
+                    <img src="type_b.jpg" width="220px" height="300px">
+                    <p>USB Type-B is a square-shaped connector used mainly for peripherals like printers and scanners.</p>
+                </div>
+                <div class="box">
+                    <img src="type_c.jpg" width="220px" height="300px">
+                    <p>USB Type-C is a versatile and compact connector with a symmetrical design, meaning it can be plugged in either way. </p>
+                </div>
+                <div class="box">
+                    <img src="type_lightning.jpg" width="220px" height="300px">
+                    <p>USB Lightning is Apple's proprietary connector used primarily for iPhones, iPads, and iPods.</p>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Learn more about us.</p>
+        </section>
+
+        <!--<section id="services">
+            <h2>Services</h2>
+            <p>What we offer.</p>
+        </section>-->
+
+        <section id="contact" class="contact">
+            <h2>Contact</h2>
+            <p>Ph:+91 7033749372</p>
+            <p>email: abhyann@gmail.com</p>
+        </section>
+    </div>
+
+    <script>
+        // JavaScript for changing navigation menu style on scroll
+        window.onscroll = function() {
+            var navbar = document.getElementById('navbar');
+            if (window.scrollY > 0) {
+                navbar.style.backgroundColor = '#665';
+            } else {
+                navbar.style.backgroundColor = '#333';
+            }
+        };
+
+        // JavaScript for changing menu item style on hover
+        var menuItems = document.querySelectorAll('#navbar ul li a');
+        menuItems.forEach(function(item) {
+            item.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#555';
+            });
+            item.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '';
+            });
+        });
+    </script>
+</body>
+</html>
